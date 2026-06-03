@@ -22,9 +22,10 @@ app = FastAPI(
 # =====================================================================
 # This allows your React UI (running on localhost:3000 or 5173) to 
 # safely send data requests to your Python server (on localhost:8000).
+ 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows development servers to connect seamlessly
+    allow_origins=["*"],  # Double-check that this is an exact asterisk string
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

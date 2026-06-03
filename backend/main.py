@@ -64,6 +64,7 @@ async def analyze_incident(payload: IncidentRequest):
         # app_agent runs Node 1 -> Node 2 -> Node 3 automatically
         final_state = app_agent.invoke(initial_input)
         
+        # print("Final LangGraph State:", final_state)  # Debugging output to trace the final state structure
         # Check if a valid resolution layout was built inside the graph state
         if "final_resolution" in final_state and final_state["final_resolution"]:
             return final_state["final_resolution"]
